@@ -1,0 +1,36 @@
+Drzewa ataku/obrony (ADTrees) są znanym formalizmem pozwalającym na analizę ilościową i jakościową różnych scenariuszy ataku.
+Korzeń drzewa odpowiada głównemu celowi (np. udany skok), zaś jego potomkowie bardziej konkretnym akcjom
+z wzrastającym stopniem szczegółowości (np. zabranie łupu, wejście do skarbca, wyłączenie alarmów).
+Węzły, intuicyjnie odpowiadające bramkom logicznym AND, OR i innym, mają tekstowe etykiety (nazwy),
+a także liczbowe atrybuty, takie jak np. czas lub koszt ataku, które mogą być przedmiotem analizy.
+
+Zadaniem jest:
+1) dokończenie implementacji parsera, przetwarzającego wejście tekstowe w notacji prefiksowej i budującego ADTree.
+
+Poszczególne węzły, rozdzielone spacjami, są opisane w następujący sposób: TYP,NAZWA,KOSZT,CZAS.
+Przykład: AND,TF,0,0 OR,GA,0,0 LEAF,h,500,3 LEAF,e,0,10 AND,ST,0,2 LEAF,b,500,60 LEAF,f,100,120.
+Ponieważ parsowanie nie stanowi głównej części zadania, wstępne operacje na łańcuchu znaków są już przygotowane,
+a należy je uzupełnić o właściwą konstrukcję drzewa.
+Podpowiedź: w zależności od typu zwracamy liść lub przez rekurencyjne wywołanie definiujemy poddrzewa węzłów AND i OR.
+Dla uproszczenia zakładamy, że węzły AND i OR mają stałą liczbę potomków (dwóch).
+
+2) dodanie funkcjonalności analizującej drzewo (powodzenia ataku w kontekście danej konfiguracji wyników akcji w liściach).
+
+Status akcji w liściach drzewa może być ustalony przez użytkownika poprzez metody klasy ADTreeContext.
+Przechowuje ona zmienne boolowskie o nazwach odpowiadających etykietom węzłów.
+Jeżeli dla danego liścia nie ustawiono żadnej zmiennej, na etapie analizy drzewa status akcji w tym węźle jest wybierany losowo.
+Akcja w węźle AND kończy się sukcesem, gdy pomyślnie zakończyły się akcje wszystkich potomków.
+Akcja w węźle OR kończy się sukcesem, gdy pomyślnie zakończyła się akcja przynajmniej jednego potomka.
+Ostatecznie powinna zostać zwrócona wartość boolowska odpowiadająca statusowi akcji w korzeniu drzewa.
+
+3) rozszerzenie o możliwość analizy drzewa także pod kątem łącznego minimalnego czasu i minimalnego kosztu ataku.
+
+Powinna zostać zwrócona odpowiednia liczba całkowita. Ponieważ interesuje nas minimalny możliwy czas/koszt,
+w tym przypadku zakładamy, że akcje we wszystkich liściach zakończyły się powodzeniem.
+
+Uwaga: należy zapewnić możliwość dodania kolejnych metod analizy drzewa ataku pod innym kątem i z dowolnym zwracanym typem
+bez dalszych modyfikacji istniejących klas i interfejsów (poza dodanym wywołaniem w głównym programie).
+Analogicznie, zmiana dotychczasowej funkcjonalności (np. poszukiwanie maksymalnego zamiast minimalnego czasu/kosztu)
+nie powinna wpływać na klasy reprezentujące węzły drzewa.
+Dozwolone jedno użycie switch(), w implementacji parsera.
+Nie można modyfikować istniejącego kodu poza uzupełnieniem brakujących fragmentów w miejscach opisanych komentarzami.
