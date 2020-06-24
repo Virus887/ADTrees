@@ -83,5 +83,3 @@ namespace Task
         public IDurationProvider DurationProvider => throw new NotImplementedException();
     }
 }
-//  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
-//  Damian Bis
