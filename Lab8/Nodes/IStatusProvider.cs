@@ -35,5 +35,4 @@ namespace Lab8.Nodes
         }
     }
 }
-//  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
-//  Damian Bis
+
