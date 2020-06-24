@@ -25,10 +25,6 @@ namespace Lab8.Nodes
         }
     }
 
-
-
-    //Możliwość dodawania nowych metod obliczania kosztu 2 dzieci
-
     class ORMaxCost : ICostProvider
     {
         public int GetCost(int c1, int c2)
@@ -37,5 +33,4 @@ namespace Lab8.Nodes
         }
     }
 }
-//  Potwierdzam samodzielność powyższej pracy oraz niekorzystanie przeze mnie z niedozwolonych źródeł
-//  Damian Bis
+
